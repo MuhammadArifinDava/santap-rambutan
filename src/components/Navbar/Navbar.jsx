@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import logoImg from '../img/logo.png';
-import './navbar.scss';
+import './Navbar.scss';
 
 const Navbars = () => {
   const [isScrolled, setIsScrolled] = useState(false);
