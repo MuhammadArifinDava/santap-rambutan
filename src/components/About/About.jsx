@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import logoImg from '../img/hero.png';
 import logoImg2 from '../img/map.png';
-import './About.scss';
 import Figure from 'react-bootstrap/Figure';
 
 function FigureExample() {
