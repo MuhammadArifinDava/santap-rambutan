@@ -1,0 +1,48 @@
+@import "../../app.scss";
+
+.Hero {
+   margin-top: 150px;
+   margin-right: 80px;
+   margin-left: 80px;
+   margin-bottom: 80px;
+
+
+   .title{
+      font-size: 40px;
+      color:white;
+      font-weight: bolder;
+      margin-bottom: 20px;
+   }
+
+   .text {
+      font-size: medium;
+      color: white;
+      font-size: 20px;
+   }
+
+   .button {
+      margin-top: 160px ;
+      margin-bottom: 30px;
+      background-color:#FFF380;
+      color: black;
+      font-weight: 600;
+      font-size: 20px;
+      padding: 18px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+   }
+
+      .button:hover{
+         background-color: #F3E5AB;
+         transform: scale(1.05);
+         color: black;
+      }
+   
+   .image{
+      width: 250px;
+      margin-left: 100px;
+   }
+   
+
+
+}
