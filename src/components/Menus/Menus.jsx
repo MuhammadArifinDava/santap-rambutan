@@ -62,7 +62,8 @@ const Menus = () => {
                   className='modal'
                >
         <Modal.Header closeButton>
-          <Modal.Title>Deskripsi Produk</Modal.Title>
+          <Modal.Title>
+            Deskripsi Produk</Modal.Title>
         </Modal.Header>
         <Modal.Body>
 Deskripsi: Rambutan Rapiah dikenal karena rasanya yang manis dan daging buahnya yang lembut. Buah ini biasanya berukuran sedang hingga besar dengan kulit yang berwarna merah muda. Rambutan Rapiah umumnya memiliki biji yang mudah dipisahkan dari daging buahnya.<br></br><br></br>
@@ -412,6 +413,7 @@ Harga : Rp 15.000 per gelas.
           <Modal.Title>Deskripsi Produk</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          
         Deskripsi: Minuman es yang dibuat dengan memadukan air gula atau sirup rambutan dengan potongan buah rambutan yang segar, dan ditambahkan dengan es serut. <br /> <br />
 Harga : Rp 12.000 per gelas.
         </Modal.Body>
