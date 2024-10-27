@@ -1,0 +1,114 @@
+@import "../../App.scss";
+
+
+.contact {
+  padding: 100px;
+  color: rgb(109, 104, 47);
+  height: 100%;
+  max-width: 1366px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+  @include mobile {
+    width: 100%;
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .textContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include mobile {
+      gap: 20px;
+      text-align: center;
+      align-items: center;
+      margin-top: 70px;
+    }
+
+    h1 {
+      font-size:62px;
+
+      @include mobile {
+        font-size: 32px;
+      }
+    }
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  .formContainer {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 370px) {
+      transform: scale(0.8) translate(0%, -15%);
+      gap: 20px;
+      padding: 15px;
+    }
+
+    @include mobile {
+      padding: 42px;
+      width: 100%;
+    }
+
+
+    .phoneSvg {
+      stroke: rgba(220, 190, 121, 0.717);
+      position: absolute;
+      margin: auto;
+      z-index: -1;
+      transform: scale(1.05) translate(40px, -5%);
+
+      @include mobile {
+        bottom: 20px;
+        transform: scale(0.7) translate(0%, -25%);
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 80%;
+      input,
+      textarea {
+        padding: 15px;
+        background-color: transparent;
+        border: 1px solid rgb(0, 0, 0);
+        color: black  ;
+        border-radius: 5px;
+        text-decoration: none;
+
+        @include mobile {
+          gap: 10px;
+          padding: 10px;
+        }
+      }
+
+      button {
+        padding: 20px;
+        border: none;
+        background-color: rgb(255, 239, 173);
+        cursor: pointer;
+        font-weight: 500;
+        border-radius: 2%;
+
+        @include mobile {
+          padding: 10px;
+          border-radius: 20px;
+          transform: translate(0%, -25%);
+        }
+      }
+    }
+  }
+}

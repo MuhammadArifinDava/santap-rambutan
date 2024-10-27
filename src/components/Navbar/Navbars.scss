@@ -1,0 +1,153 @@
+@import "../../App.scss";
+
+.core {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+
+  .brand {
+    margin-left: 20px;
+    font-weight: 900;
+    color: #2a2a2a;
+    font-size: 22px;
+    font-family: "Ubuntu Sans Mono", monospace;
+  }
+
+  .menu-toggle {
+    cursor: pointer;
+    font-size: 27px;
+    color: #000000;
+    z-index: 1001; // Ensure it's above other elements
+  }
+}
+
+.searchb {
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-right: 8px;
+  background-color: transparent;
+  color: #ffffff;
+  outline: none;
+
+  &:focus {
+    border-color: #e8e4a5;
+  }
+}
+
+.links {
+  color: #fff;
+  background-color: #ffde939a;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-right: 8px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #9c88599a;
+  }
+}
+
+.navbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(185, 173, 136, 0.9);
+  transition: background-color 0.3s ease-in-out;
+
+  &.fixed-navbar {
+    position: fixed;
+    background-color: rgba(245, 234, 193, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.offcanvasA {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  width: 250px;
+  background-color: rgba(103, 93, 66, 0.9);
+  transition: right 0.5s ease-in-out;
+  z-index: 9999; 
+  display: flex;
+  flex-direction: column;
+  font-family: "Ubuntu Sans Mono", monospace;
+
+  &.open {
+    right: 0;
+  }
+
+  .offcanvasA-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #594423;
+    color: #fff;
+  }
+
+  .offcanvasA-title {
+    font-family: "Ubuntu Sans Mono", monospace;
+  }
+
+  .offcanvasA-close {
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .offcanvasA-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+
+    .links {
+      margin-bottom: 16px;
+      text-decoration: none;
+      color: #fff;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    }
+
+    .dropdown {
+      position: relative;
+
+      .dropdown-title {
+        cursor: pointer;
+        margin-bottom: 16px;
+        color: #fff;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+        text-align: center;
+      }
+
+      .dropdown-content {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(255, 253, 158, 0.283);
+        padding: 8px;
+        border-radius: 10px;
+
+        .links {
+          margin-bottom: 8px;
+          color: #000000;
+          text-shadow: none;
+        }
+
+        .divider {
+          height: 2px;
+          background-color: #fff3f3;
+          margin: 8px 0;
+        }
+      }
+
+      &:hover .dropdown-content {
+        display: flex;
+      }
+    }
+  }
+}

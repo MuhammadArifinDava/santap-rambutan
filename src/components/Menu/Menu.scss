@@ -1,11 +1,184 @@
 @import "../../app.scss";
 
-.text-left {
-   margin-top: 170px;
+@mixin mobile {
+  @media (max-width: 738px) {
+    @content;
+  }
 }
 
-.carousel {
-   width: 800px;
-   margin-left: 410px;
+.section {
+  padding: 2rem;
+  background: linear-gradient(to top, #ffffff, #ffffff);
 
+  .top {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .title {
+      margin-bottom: 3rem;
+
+      h1 {
+        font-size: 2.9rem;
+        font-family: "Ubuntu Sans Mono", monospace;
+        color: #bcb18f;
+        text-shadow: 1px 1px 1px rgb(93, 89, 64);
+      }
+    }
+  }
+
+  .menus {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .card {
+      background: linear-gradient(to right, #f3e5ab, #beb284);
+      border-radius: 1rem;
+      box-shadow: 0 0px 0px rgba(0, 0, 0, 0.9);
+      transition: transform 0.3s;
+      width: 18rem;
+      height: 25rem;
+      margin: 0.5rem;
+
+      @include mobile{
+        height: 15rem;
+        width: 10rem;
+        margin-bottom: 100px;
+      }
+
+      &:nth-child(4n+1), 
+      &:nth-child(4n+3) {
+        transform: translateY(-22px);
+
+        &:hover {
+          transform: translateY(30px);
+        }
+      }
+
+      &:nth-child(4n+2), 
+      &:nth-child(4n+4) {
+        transform: translateY(22px);
+
+        &:hover {
+          transform: translateY(-30px);
+        }
+      }
+
+      .card-img-top {
+        border-top-left-radius: 5.5rem;
+        border-bottom-right-radius: 4rem;
+        border-top-right-radius: 1rem;
+      }
+
+      .card-body {
+        text-align: center;
+
+        .card-title {
+          margin-top: -12px;
+          font-size: 1.3rem;
+          color: rgba(0, 0, 0, 0.797);
+          font-weight: 600;
+
+          @include mobile{
+            font-size: 1.1rem;
+          }
+        }
+
+        .rating-container {
+          margin-bottom: -30px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .rating-text-overlay {
+            position: absolute;
+            color: #000000;
+            font-weight: bold;
+            font-size: 0.8rem;
+            z-index: 2;
+            top: 40%;
+            right: 44%;
+          }
+
+          .Rating {
+            position: relative;
+            z-index: 1;
+            margin-bottom: -1rem;
+          }
+        }
+
+        .modals {
+          background-color: rgb(42, 32, 3);
+          border: none;
+          color: rgb(255, 255, 255);
+          border-radius: 5%;
+          box-shadow: none;
+
+          &:hover {
+            background-color: #000000;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .title {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+
+    h1 {
+      font-size: 2.5rem;
+      color: #bcb18f;
+      text-shadow: 1px 1px 1px rgb(93, 89, 64);
+      font-family: "Ubuntu Sans Mono", monospace;
+    }
+  }
+}
+
+.modal .modal-content {
+  border-radius: 100%;
+  padding: 57px;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.77);
+  
+  @include mobile {
+    height: 45vh;
+    padding: 50px;
+    font-size: small;
+  }
+}
+
+@include mobile {
+  .menus {
+    flex-direction: row;
+
+    .card {
+      width: calc(50% - 1rem);
+      margin: 0.5rem;
+
+        .card-body {
+          .rating-container {
+            .rating-text-overlay {                                          
+              display: none;
+            }
+
+            .Rating {
+              display: none;
+              }
+            }
+          
+
+          .modals {
+            width: calc(68%);
+            height: calc(61%);
+            margin-top: 27px;
+            padding: 1.5px;
+            font-size: 0.7rem;
+          }
+        }
+    }
+  }
 }

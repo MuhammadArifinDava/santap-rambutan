@@ -1,0 +1,32 @@
+@import "../../app.scss";
+
+.coffee-theme {
+  background-color: #f3e5ab;
+  color: #6f4e37;
+  padding: 50px 20px;
+  text-align: center;
+
+  .footer {
+    margin-top: 10px;
+    padding-top: 20px;
+    border-top: 2px solid #d3bfaec0;
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .social-links {
+      a {
+        color: #6f4e37;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

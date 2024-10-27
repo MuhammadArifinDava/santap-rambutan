@@ -1,0 +1,17 @@
+@import "../../app.scss";
+
+.parallax-container {
+  position: relative;
+  width: 100%;
+
+  .image1 {
+    width: 100%;
+    height: 93vh;
+    background-size: cover;
+    background-position: center;
+
+    @include mobile{
+      height: 55vh;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+@import "../../app.scss";
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  position: relative;
+}
+
+.main-image {
+  width: auto;
+  height: 80vh;
+  position: relative;
+  z-index: 10;
+  border-radius: 25px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 60px;
+
+  @include mobile{
+    height: 48vh;
+  }
+}
+
+.overlay-images {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  z-index: 1;
+}
+
+.overlay-image {
+  width: auto;
+  height: 30vh;
+  z-index: 0;
+  filter: blur(0.5px);
+  transition: filter 0.3s ease-in-out;
+
+  &:first-child,
+  &:last-child {
+    filter: blur(3px);
+  }
+}
+
+.text-box {
+  position: absolute;
+  top: 70%;
+  left: 130%;
+  transform: translate(-50%, -50%);
+  background: rgba(217, 215, 161, 0.9);
+  padding: 15px 27px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+  z-index: 15;
+  font-family: "Indie Flower", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+
+  @include mobile{
+    left: 87%;
+    height: 100px;
+    width: 200px;
+  }
+}
+
+.text-box p {
+  top: 90%;
+  font-size: 25px;
+  color: #333;
+  margin: 0;
+
+  @include mobile{
+    font-size: 15px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .overlay-images {
+    display: flex;
+  }
+
+  .overlay-image {
+    height: 27vh; 
+
+    &:nth-child(n+3) {
+      display: none; 
+    }
+  }
+}

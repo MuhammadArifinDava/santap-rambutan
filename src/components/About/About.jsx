@@ -1,45 +1,57 @@
+// eslint-disable-next-line no-unused-vars
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import logoImg from '../img/hero.png';
-import logoImg2 from '../img/map.png';
-import Figure from 'react-bootstrap/Figure';
+import { Element } from 'react-scroll';
+import './About.scss';
+import { useInView } from 'react-intersection-observer';
 
-function FigureExample() {
+const About = () => {
+  // eslint-disable-next-line no-unused-vars
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.5,
+  });
+
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6">
-      <motion.div initial={{ opacity: 0, x: 110 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 4.7, delay: 4 }} className='title'>
-          <Figure>
-            <Figure.Image
-              width={700}
-              height={800}
-              alt="Hero Image"
-              src={logoImg}
-            />
-          </Figure>
-      </motion.div>
-        </div>
-        <div className="col-md-6">
-        <motion.div initial={{ opacity: 0, x: -110 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 4.7, delay: 4 }} className='title'>
-         <h1>Tentang Kami</h1>
-         <p>Lokasi outlet kami berada pada Jl. Gerilya, No.67, Samarinda, Kalimantan Timur, 75117</p>
-          <Figure>
-            <Figure.Image
-              width={700}
-              height={400}
-              alt="Map Image"
-              src={logoImg2}
-            />
-          </Figure>
-        </motion.div>
+    <Element name="About" className="about-container">
+      <div className="bgtext-container">
+        <p className="bgtext">
+          Heart To Cup &nbsp; Enjoy Ur Coffee &nbsp; Heart To Cup &nbsp; Enjoy Ur Coffee &nbsp; Heart To Cup &nbsp; Enjoy
+        </p>
+      </div>
+      <div className="content-container" ref={ref}>
+        <motion.h1
+          className="title"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 0.8  }}
+        >
+          Our Story
+        </motion.h1>
+        <div className="content">
+          <motion.img
+            src="../../public/img/4.png"
+            alt="Background Image"
+            className="bgrock"
+            initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          />
+          <motion.p
+            className="description"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.5 }}
+          >
+            Bermula pada tahun 2018, kami memiliki harapan-harapan untuk dapat menjadi wadah ataupun tangan ketiga untuk segala kalangan usia dalam menikmati waktu, menikmati hidup dengan manusia lain dalam bincang asa, ataupun hanya sekedar ingin menikmati kehidupan dengan ditemani secangkir kopi sebagai pembangkit jiwa yang hampir tertidur. Suasana Coffeeshop yang sangat rindang sehingga anda dapat merasakan rasanya kembali &quot;pulang&quot;.
+          </motion.p>
         </div>
       </div>
-      <div style={{ textAlign: 'center', marginTop:'30px'}}>
-  <p>" Kami tunggu kedatangan Anda di Outlet kami👋 "</p>
-</div>
-
-    </div>
+    </Element>
   );
-}
+};
 
-export default FigureExample;
+export default About;
